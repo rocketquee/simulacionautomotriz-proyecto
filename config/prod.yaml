@@ -1,0 +1,19 @@
+logging:
+  level: INFO
+  json_output: true
+  include_timestamps: true
+
+simulation:
+  duration_s: 5.0
+  sample_rate_hz: 2000.0
+  solver: DOP853
+  relative_tolerance: 1.0e-9
+  absolute_tolerance: 1.0e-11
+
+persistence:
+  enabled: true
+  output_dir: artifacts
+  format: csv_json
+
+experiment:
+  max_workers: 8

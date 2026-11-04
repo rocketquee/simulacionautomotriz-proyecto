@@ -1,0 +1,11 @@
+logging:
+  level: DEBUG
+  json_output: false
+  include_timestamps: true
+
+simulation:
+  duration_s: 3.0
+  sample_rate_hz: 800.0
+
+persistence:
+  enabled: false

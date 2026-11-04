@@ -1,0 +1,51 @@
+# Baseline configuration for a mid-size passenger car quarter-car corner.
+# Environment variables with the SUSPENSION_SIM__ prefix override any leaf.
+suspension:
+  sprung_mass_kg: 300.0
+  unsprung_mass_kg: 40.0
+  spring_stiffness_n_per_m: 25000.0
+  damping_coefficient_n_s_per_m: 1800.0
+  tire_stiffness_n_per_m: 190000.0
+
+simulation:
+  duration_s: 4.0
+  sample_rate_hz: 1000.0
+  solver: DOP853
+  relative_tolerance: 1.0e-8
+  absolute_tolerance: 1.0e-10
+  max_step_s: 0.002
+  initial_sprung_displacement_m: 0.0
+  initial_unsprung_displacement_m: 0.0
+  initial_sprung_velocity_m_per_s: 0.0
+  initial_unsprung_velocity_m_per_s: 0.0
+
+road:
+  kind: smooth_bump
+  amplitude_m: 0.06
+  bump_length_m: 1.2
+  wavelength_m: 6.0
+  speed_m_per_s: 15.0
+  start_distance_m: 2.0
+  roughness_coefficient_m3: 2.56e-4
+  waviness: 2.0
+  random_seed: 2026
+
+kpi:
+  comfort_low_hz: 0.5
+  comfort_high_hz: 80.0
+  settling_threshold_ratio: 0.02
+
+persistence:
+  enabled: true
+  output_dir: artifacts
+  format: csv_json
+
+logging:
+  level: INFO
+  json_output: true
+  include_timestamps: true
+
+experiment:
+  spring_stiffness_multipliers: [0.75, 1.0, 1.25]
+  damping_multipliers: [0.5, 1.0, 1.5]
+  max_workers: 4

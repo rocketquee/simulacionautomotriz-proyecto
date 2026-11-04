@@ -1,0 +1,15 @@
+suspension:
+  sprung_mass_kg: 320.0
+  unsprung_mass_kg: 38.0
+  spring_stiffness_n_per_m: 22000.0
+  damping_coefficient_n_s_per_m: 2100.0
+  tire_stiffness_n_per_m: 185000.0
+
+road:
+  kind: smooth_bump
+  amplitude_m: 0.05
+  bump_length_m: 1.6
+  speed_m_per_s: 14.0
+
+simulation:
+  duration_s: 5.0
